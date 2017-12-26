@@ -1,0 +1,124 @@
+<h1 align=center>{{collegename}}</h1>
+<div style="margin: auto; max-width: 1000px; margin-top:50px">
+    <data-table id="=films-grid"
+        headerTitle="Projects of"
+        [items]="projects"
+        [itemCount]="projectCount"
+        (reload)="reloadProjects($event)"
+
+        [limit]="5"
+        [sortBy]="'projecttype'"
+        [sortAsc]="true"
+
+        [selectColumn]="false"
+        [multiSelect]="false"
+        [substituteRows]="false"
+        [expandableRows]="true"
+        [translations]="translations"
+        [indexColumnHeader]="'#'"
+        [selectOnRowClick]="true"
+        >
+        <template #dataTableExpand let-item="item">
+            <div [textContent]="item.remarks" style="padding: 5px; color: gray"></div>
+        </template>
+        <data-table-column
+            [property]="'projecttype'"
+            [header]="'Project Type'"
+            [sortable]="true">
+        </data-table-column>
+        <data-table-column
+            [property]="'assettype'"
+            [header]="'Asset Type'"
+            [sortable]="true">
+        </data-table-column>
+        <data-table-column
+            [property]="'valueofproject'"
+            [header]="'Value of Project'"
+            [sortable]="false"
+            [cellColors]="cellColor">
+        </data-table-column>
+        <data-table-column
+        [property]="'totalprojectexpenses'"
+        [header]="'Total Project Expenses'">
+    </data-table-column>
+        <data-table-column
+            [property]="'exp'"
+            [header]="'Expenditure Till now'">
+        </data-table-column>
+        <data-table-column
+            [property]="'fd'"
+            [header]="'Expected Finish Date'">
+        </data-table-column>
+    </data-table>
+
+<div style="margin-top: 10px">
+<h5><i> Total Expenditure on Construction is : {{expconst}}</i></h5> 
+<h5><i> Total Expenditure on Renovation is : {{expren}}</i></h5> 
+<h5><i> Total Expenditure on Equipment is : {{expeqp}}</i></h5> 
+<h4><i>Grand total of Expenditure  : {{totalexp}}</i></h4> 
+</div>
+<div style="margin-top: 10px" align="center">
+    <a class="button" href="https://rusamhrd.tiss.edu/institute-form/{{linkaddress}}">Go to Fundtracker form</a>
+    </div>
+
+
+</div>
+<!--
+
+    <div style="margin-top: 10px">
+        <b>Selected:</b>
+        <span *ngIf="filmsTable.selectedRow == null"><i>No item selected</i></span>
+        <span [textContent]="filmsTable.selectedRow && filmsTable.selectedRow.item.title"></span>
+    </div>
+
+
+<div style="margin: auto; max-width: 1000px; margin-top:50px">
+    <data-table id="films-grid"
+        headerTitle="Films (Single selection)"
+        [items]="films"
+        [itemCount]="filmCount"
+        (reload)="reloadFilms($event)"
+
+        [limit]="8"
+        [sortBy]="'rating'"
+        [sortAsc]="false"
+
+        [selectColumn]="true"
+        [multiSelect]="false"
+        [substituteRows]="false"
+        [expandableRows]="true"
+        [translations]="translations"
+        [indexColumnHeader]="'#'"
+        [selectOnRowClick]="true"
+        >
+        <template #dataTableExpand let-item="item">
+            <div [textContent]="item.description" style="padding: 5px; color: gray"></div>
+        </template>
+        <data-table-column
+            [property]="'title'"
+            [header]="'Title'"
+            [sortable]="true">
+        </data-table-column>
+        <data-table-column
+            [property]="'year'"
+            [header]="'Release year'"
+            [sortable]="true">
+        </data-table-column>
+        <data-table-column
+            [property]="'rating'"
+            [header]="'Rating'"
+            [sortable]="true"
+            [cellColors]="cellColor">
+        </data-table-column>
+        <data-table-column
+            [property]="'director'"
+            [header]="'Director'">
+        </data-table-column>
+    </data-table>
+    <div style="margin-top: 10px">
+        <b>Selected:</b>
+        <span *ngIf="filmsTable.selectedRow == null"><i>No item selected</i></span>
+        <span [textContent]="filmsTable.selectedRow && filmsTable.selectedRow.item.title"></span>
+    </div>
+</div>
+-->
